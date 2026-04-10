@@ -1,7 +1,7 @@
 # Multi-Task-Orchestrator-QNX
 ## Real-Time Sensor Fusion and Adaptive Display using QNX RTOS on Raspberry Pi 4
 
-### 1. Summary
+### 1. Abstarct
 
 Modern embedded systems require efficient coordination of **multiple sensors** and processing units to achieve reliable real-time performance. However, managing multiple dependent tasks while maintaining synchronization and timing constraints remains a critical challenge.<br>
 
