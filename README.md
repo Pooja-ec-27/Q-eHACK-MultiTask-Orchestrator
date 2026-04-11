@@ -78,9 +78,8 @@ Logical Task Sequencing: Dependency-aware logic prevents "stale" data processing
 ITC Synchronization: Robust Inter-Task Communication using Mutexes for resource locking and Message Queues for asynchronous telemetry.
 Fault Isolation: Decoupled task architecture to ensure localized faults do not compromise the core system heartbeat. \\
 
-<br>
 ### 8. Workflow
-<br>
+
 <img width="587" height="443" alt="image" src="https://github.com/user-attachments/assets/6738ade1-afb3-4368-9f55-ffafd79f449e" />
 \\
 
@@ -99,8 +98,7 @@ Resource Efficiency: Optimized CPU idle cycles and memory footprint through even
 
 This project successfully demonstrates the implementation of a centralized multitasking orchestrator, bridging the gap between raw sensor data and deterministic safety analytics. By leveraging RTOS primitives, we have ensured a robust, scalable architecture capable of operating in high-stakes industrial environments.
 
-### Acknowledgements
 **We extend our sincere gratitude to**:\
 **Pi Square Technologies:** For providing the technical framework and industry insights into QNX and real-time systems.\
-**Academic Mentors:** Dr. Sharmila B.S. and Mr. Puneeth S. from The National Institute of Engineering (NIE), Mysuru, for their invaluable guidance and constant support throughout the development process.\
+**Academic Mentors:** Dr. Sharmila B.S. and Mr. Puneeth S. from The National Institute of Engineering (NIE), Mysuru, for their invaluable guidance and constant support throughout the development process.
 
