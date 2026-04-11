@@ -1,9 +1,10 @@
-Firmware
-Libraries Used :
-Standard C Libraries
-I2C Communication Library (rpi_i2c.h)
-Source Code
-1. I2C Functional Verification and Sensor Testing
+## Firmware
+### Libraries Used :<br>
+* Standard C Libraries<br>
+* I2C Communication Library (rpi_i2c.h)<br>
+
+### Source Code<br>
+#### 1. I2C Functional Verification and Sensor Testing
 #include <stdio.h>      // For printing output
 #include <stdlib.h>     // For exit functions
 #include <unistd.h>     // For delay
