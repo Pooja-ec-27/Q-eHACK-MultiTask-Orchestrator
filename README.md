@@ -10,9 +10,7 @@ In response to this, our project presents a multi-task orchestrator implemented 
 
 The proposed system ensures **deterministic execution, low latency, and reliability** by leveraging priority-based scheduling, inter-process communication, event based execution thereby demonstrating behavior similar to industrial real-time embedded systems.<br>
 
-### 2. Problem Statement
-
-2. Problem Statement
+### 2. Problem Statement  (33: Multitasking Orchestrator for Sensor display) \
 In mission-critical Smart Mining environments, the lack of task synchronization in embedded systems poses severe safety risks. Current decentralized architectures fail to handle high-frequency data fusion from heterogeneous sensors (Gas, Vibration, Thermal), leading to:
 
  <b>Temporal Inconsistency </b> : High-priority gas alerts are often delayed by low-priority logging tasks due to lack of preemption.
@@ -27,7 +25,7 @@ In mission-critical Smart Mining environments, the lack of task synchronization 
 3. Project Objectives
 The core goal is to develop a Centralized Orchestration Layer for mining-specific embedded nodes to ensure deterministic performance and safety. <br>
 <br>
-##  System Design Objectives & Technical Strategy
+###  System Design Objectives & Technical Strategy
 
 | **Objective**           | **Technical Strategy**                                                                 |
 |------------------------|----------------------------------------------------------------------------------------|
