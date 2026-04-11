@@ -8,14 +8,14 @@
 **1.The below code is used to check the functional verification and testing of the circuit components**
 ```cpp
 #include <stdio.h>      // For printing output
-#include <stdlib.h>     // For exit functions
+#include <stdlib.h>     // For exiting functions
 #include <unistd.h>     // For delay
 #include <stdint.h>     // For fixed-size data types
 
 #include "rpi_i2c.h"   // I2C communication library
+// config.h files
 
 #define BMP280_ADDR 0x76        // Sensor I2C address
-
 #define BMP280_REG_ID 0xD0      // Chip ID register
 #define BMP280_REG_RESET 0xE0   // Reset register
 #define BMP280_REG_STATUS 0xF3  // Status register
@@ -32,7 +32,6 @@
 #define BMP280_REG_TEMP_XLSB 0xFC   // Temp XLSB
 
 #define BMP280_REG_CALIB 0x88       // Calibration start
-
 #define I2C_BUS 1                  // I2C bus number
 
 typedef struct {
@@ -53,7 +52,7 @@ typedef struct {
 
 static bmp280_calib_t calib;   // Store calibration data
 static int32_t t_fine;         // Intermediate variable
-
+// api smbus_read()
 static void read_register(uint8_t reg, uint8_t *data)
 {
     smbus_read_byte_data(I2C_BUS, BMP280_ADDR, reg, data); // Read 1 byte from sensor
