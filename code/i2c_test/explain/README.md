@@ -53,16 +53,18 @@ Reads raw pressure data<br>
 Uses calibration values<br>
 Converts to hPa<br>
 ### 8. Continuous Monitoring
-**while (1)**
 * Runs in loop<br>
 * Reads temperature and pressure every 1 second<br>
 
 ### 9. Output Example<br>
+
+ <br> <img width="1600" height="850" alt="image" src="https://github.com/user-attachments/assets/8e4f43cd-550b-4041-bdc4-8764f400f99d" /> <br>
+
+
 * Temperature : 27.85 C<br>
 * Pressure    : 1005.32 hPa<br>
 
 ### 10. Key Concept
-* I2C communication is verified by reading the chip ID register<br>
 * If correct response is received → sensor is connected<br>
 * If not → communication has failed<br>
 
