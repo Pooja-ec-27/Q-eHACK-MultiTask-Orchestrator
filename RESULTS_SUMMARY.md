@@ -1,3 +1,6 @@
+## System setup
+<img width="715" height="1600" alt="image" src="https://github.com/user-attachments/assets/a2580a85-8927-402e-b0aa-c59915ee5dff" />
+
 ## RESULTS
 ## ✅ Test Case Results
 
@@ -27,8 +30,8 @@ Justification:
 Data is continuously flushed to file.
 On power loss → only latest cycle may be lost.
 System recovers on reboot → fail-recover behavior.
-3. Sensor Disconnection
 
+3. Sensor Disconnection
 Code:
 
 if (smbus_read_byte_data(I2C_BUS, BMP280_ADDR, BMP280_REG_ID, &chip_id) != I2C_SUCCESS)
@@ -42,8 +45,8 @@ Justification:
 Detects missing sensor via I2C failure.
 Prevents invalid data propagation.
 System stops → fail-safe design.
-4. Sensor False Data (Noise / Spikes)
 
+4. Sensor False Data (Noise / Spikes)
 Code:
 
 a.alarm_active = (raw->temp >= ALARM_TEMP_HIGH || raw->pressure <= ALARM_PRESS_LOW);
@@ -54,8 +57,8 @@ Justification:
 Threshold + trend used to detect abnormal values.
 Sudden spikes flagged as alarms.
 Ensures data validation before action.
-5. Sensor Stuck (Constant Value)
 
+5. Sensor Stuck (Constant Value)
 Code:
 
 a.trend_delta = (prev > 0.0f) ? (raw->pressure - prev) : 0.0f;
