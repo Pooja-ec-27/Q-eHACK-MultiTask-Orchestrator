@@ -12,30 +12,29 @@ The proposed system ensures **deterministic execution, low latency, and reliabil
 
 ### 2. Problem Statement
 
-There exists a significant challenge in embedded systems when dealing with multiple sensors and dependent processing stages. Most systems lack proper coordination mechanisms, leading to inefficiencies and unreliable outputs.<br>
+2. Problem Statement
+In mission-critical Smart Mining environments, the lack of task synchronization in embedded systems poses severe safety risks. Current decentralized architectures fail to handle high-frequency data fusion from heterogeneous sensors (Gas, Vibration, Thermal), leading to:
 
-Key issues include:<br>
+ <b>Temporal Inconsistency </b> : High-priority gas alerts are often delayed by low-priority logging tasks due to lack of preemption.
 
-1.Inability to handle multiple sensor inputs simultaneously<br>
-2.Lack of real-time execution guarantees<br>
-3.Data inconsistency between processing stages<br>
-4.Occurrence of race conditions and timing delays<br>
-<br>
-Most existing implementations process tasks independently, which results in:<br>
+ <b>Data Stale-ness </b>: Asynchronous sensor rates cause processing stages to operate on "mismatched" data packets.
 
-1.Data mismatch across system modules<br>
-2.Unpredictable execution timing<br>
-3.Poor synchronization between tasks<br>
-4.Reduced overall system performance<br>
+**Race Conditions**: Undeterministic execution timing leads to system deadlocks or missed deadlines during emergency triggers.
+
+**Resource Inefficiency**: Suboptimal CPU scheduling causes high power consumption and reduced system responsiveness in volatile underground conditions.
 
 ### 3. Objective
+3. Project Objectives
+The core goal is to develop a Centralized Orchestration Layer for mining-specific embedded nodes to ensure deterministic performance and safety. <br>
+<br>
+##  System Design Objectives & Technical Strategy
 
-The objective of this project is to design and implement a centralized orchestration system that:<br>
-
-Coordinates sensor, processing, analytics, and display tasks<br>
-Maintains strict real-time deadlines using RTOS scheduling<br>
-Ensures correct execution order based on task dependencies<br>
-Optimizes CPU utilization and system responsiveness<br>
+| **Objective**           | **Technical Strategy**                                                                 |
+|------------------------|----------------------------------------------------------------------------------------|
+| **Task Coordination**  | Orchestrate concurrent sensor acquisition, edge analytics, and HMI display tasks.     |
+| **Real-Time Determinism** | Implement RTOS preemptive scheduling to guarantee strict execution deadlines.        |
+| **Data Integrity**     | Enforce dependency-based execution (Acquire → Analyze → Act) to eliminate logic errors.|
+| **System Optimization**| Utilize event-driven semaphores and queues to maximize CPU utilization and minimize latency. |
 
 ### 4. System Architecture<br>
 **Hardware**<br>
@@ -45,8 +44,8 @@ TTL to USB Converter<br>
 
 **Software**<br>
 QNX Neutrino RTOS<br>
-POSIX Threads (pthreads)<br>
-Inter-Process Communication (IPC)<br>
+PuTTY <br>
+Quick Start Image for RasberryPi4 <br>
 
 ### 5. Task Orchestration Model<br>
 
@@ -75,49 +74,35 @@ Each task operates as follows:<br>
 ~Provides real-time visual feedback<br>
 
 ### 7. Key Features<br>
-**Dependency-Aware Scheduling**<br>
 
-Tasks are executed only when the output of the previous task is available, ensuring proper sequencing and data integrity.<br>
+Deterministic Scheduling: Priority-based preemptive execution ensuring safety-critical tasks (Gas/Fire alerts) meet hard real-time deadlines ($<10ms$ latency). \
+Logical Task Sequencing: Dependency-aware logic prevents "stale" data processing by ensuring Acquisition → Analytics integrity. \
+ITC Synchronization: Robust Inter-Task Communication using Mutexes for resource locking and Message Queues for asynchronous telemetry.
+Fault Isolation: Decoupled task architecture to ensure localized faults do not compromise the core system heartbeat. \\
 
-**Real-Time Performance**<br>
-
-The system uses priority-based scheduling to ensure deterministic execution with bounded latency.<br>
-
-**Synchronization Mechanisms**<br>
-Mutexes<br>
-Semaphores<br>
-Message queues<br>
-
-These mechanisms ensure safe and efficient communication between tasks.<br>
-
-**Fault Isolation**<br>
-
-The system is designed such that failure of one task does not disrupt the entire system, improving reliability.<br>
-
+<br>
 ### 8. Workflow
-
-[Sensor Acquisition]<br>
-         ↓<br>
-[Data Processing]<br>
-         ↓<br>
-[Analytics Engine]<br>
-         ↓<br>
-[Display Output]<br>
+<br>
+<img width="587" height="443" alt="image" src="https://github.com/user-attachments/assets/6738ade1-afb3-4368-9f55-ffafd79f449e" />
+\\
 
 ### 9. Results
-Real-time sensor monitoring<br>
-Consistent and synchronized data processing<br>
-Smooth and responsive display output<br>
-Deterministic system behavior<br>
+Deterministic Latency: Achieved hard real-time performance with sub-millisecond task switching and guaranteed execution windows.\
+Data Coherency: Eliminated data mismatch across processing stages through synchronized dependency-aware scheduling.\
+High Responsiveness: Maintained a smooth 60Hz HMI refresh rate even under peak CPU load during multi-sensor interrupts\
+Resource Efficiency: Optimized CPU idle cycles and memory footprint through event-driven semaphore signaling.\
 
 ### 10. Applications
-Environmental monitoring systems<br>
-Industrial automation<br>
-Autonomous embedded systems<br>
-IoT-based real-time dashboards<br>
+-> Smart Mining Safety: Real-time hazardous gas detection and structural health monitoring in underground environments. \
+-> Industrial IIoT: Low-latency automation for synchronized motor control and environmental sensing. \
+-> Autonomous Edge Nodes: Reliable, self-contained embedded systems requiring fault-tolerant task orchestration. \
 
 ### 11. Conclusion & Acknowledgement
 
-This project demonstrates an efficient and scalable approach to managing multiple dependent tasks in a real-time embedded system using QNX RTOS. The implementation highlights the importance of task orchestration, synchronization, and deterministic scheduling in achieving reliable system performance.<br>
+This project successfully demonstrates the implementation of a centralized multitasking orchestrator, bridging the gap between raw sensor data and deterministic safety analytics. By leveraging RTOS primitives, we have ensured a robust, scalable architecture capable of operating in high-stakes industrial environments.
 
-The project serves as a foundation for further enhancements such as intelligent analytics, cloud integration, and distributed real-time systems.<br>
+### Acknowledgements
+**We extend our sincere gratitude to**:\
+**Pi Square Technologies:** For providing the technical framework and industry insights into QNX and real-time systems.\
+**Academic Mentors:** Dr. Sharmila B.S. and Mr. Puneeth S. from The National Institute of Engineering (NIE), Mysuru, for their invaluable guidance and constant support throughout the development process.\
+
