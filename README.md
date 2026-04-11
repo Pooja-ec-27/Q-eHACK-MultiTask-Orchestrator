@@ -1,13 +1,14 @@
 # Multi-Task-Orchestrator-QNX
 ## Real-Time Sensor Fusion and Adaptive Display using QNX RTOS on Raspberry Pi 4
+## Team: Neutrino Knights / Pushpa M , Kavya G , Pooja K N
 
 ### 1. Abstarct
 
 Modern embedded systems require efficient coordination of **multiple sensors** and processing units to achieve reliable real-time performance. However, managing multiple dependent tasks while maintaining synchronization and timing constraints remains a critical challenge.<br>
 
-In response to this, our project presents a multi-task orchestrator implemented on QNX RTOS, designed to coordinate sensor acquisition, data processing, analytics, and display tasks on a Raspberry Pi 4 platform. The system integrates environmental sensors such as Sense HAT and optional DHT22 to collect real-time data and generate responsive outputs through LED-based displays.<br>
+In response to this, our project presents a multi-task orchestrator implemented on QNX RTOS, designed to coordinate sensor acquisition, data processing, analytics, and display tasks on a Raspberry Pi 4 platform. The system integrates environmental sensors such as Sense Hat (BMP280) and helps in visualising the system analytics.
 
-The proposed system ensures **deterministic execution, low latency, and data consistency** by leveraging priority-based scheduling, inter-task communication, and dependency-aware execution pipelines, thereby demonstrating behavior similar to industrial real-time embedded systems.<br>
+The proposed system ensures **deterministic execution, low latency, and reliability** by leveraging priority-based scheduling, inter-process communication, event based execution thereby demonstrating behavior similar to industrial real-time embedded systems.<br>
 
 ### 2. Problem Statement
 
