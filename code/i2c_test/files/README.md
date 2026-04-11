@@ -4,7 +4,9 @@
 * I2C Communication Library (rpi_i2c.h)<br>
 
 ### Source Code<br>
-#### 1. I2C Functional Verification and Sensor Testing
+#### 1. I2C Functional Verification and Sensor Testing<br>
+**1.The below code is used to check the functional verification and testing of the circuit components**
+```cpp
 #include <stdio.h>      // For printing output
 #include <stdlib.h>     // For exit functions
 #include <unistd.h>     // For delay
@@ -135,3 +137,5 @@ int main(void)
         puts("ERROR: Wrong device ID"); // Wrong sensor
         return EXIT_FAILURE;
     }
+```
+--------------
